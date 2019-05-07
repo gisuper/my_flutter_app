@@ -17,24 +17,36 @@ class MyDrawer extends StatelessWidget {
               title: Text(
                 "MOVIE",
                 textAlign: TextAlign.right,
+                style: buildTextStyle(),
               ),
+              trailing: Icon(Icons.movie, color: Colors.blue,),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
               title: Text(
                 "MUSIC",
                 textAlign: TextAlign.right,
+                style: buildTextStyle(),
               ),
+              trailing: Icon(Icons.music_video, color: Colors.blue,),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
               title: Text(
                 "PICTURE",
                 textAlign: TextAlign.right,
+                style: buildTextStyle(),
               ),
+              trailing: Icon(Icons.picture_in_picture, color: Colors.blue,),
               onTap: () => Navigator.pop(context),
             )
           ],
         ));
+  }
+
+  TextStyle buildTextStyle() {
+    return TextStyle(color: Colors.lightBlue,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w200);
   }
 }
