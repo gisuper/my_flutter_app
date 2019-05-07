@@ -26,7 +26,12 @@ class MusicWidget extends StatelessWidget {
           SizedBox(
             height: 10.0,
           ),
-          buildRichText()
+          buildRichText(),
+          SizedBox(
+            height: 10.0,
+          ),
+          AspectRatio(aspectRatio: 5.0 / 1.0,
+            child: Container(height:20.0,color:Color.fromRGBO(22, 11, 109, 0.3),child: Image.network(posts[2].imageUrl)),)
         ],
       );
   }
