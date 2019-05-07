@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
 
   Container buildTitle() {
     return Container(
+      padding: EdgeInsets.only(right: 45.0),
             child: Text(
               "Flutter App",
               textAlign: TextAlign.center,

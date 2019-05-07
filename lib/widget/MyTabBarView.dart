@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/model/Post.dart';
+import 'package:my_flutter_app/widget/MusicWidget.dart';
 
 
 
@@ -8,7 +9,7 @@ class MyTabBarView extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBarView(children: [
       ListView.builder(itemCount: posts.length, itemBuilder: _itemBuilder),
-      Text("MUSIC_VIDEO"),
+      MusicWidget(),
       Text("PICTURE_IN_PICTURE")
     ]);
   }
@@ -35,3 +36,4 @@ class MyTabBarView extends StatelessWidget {
     );
   }
 }
+
