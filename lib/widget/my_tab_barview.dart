@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../model/Post.dart';
-import '../widget/MusicWidget.dart';
-import '../widget/PictureWidget.dart';
-import '../widget/LayoutWidget.dart';
+import '../model/post.dart';
+import '../widget/music_widget.dart';
+import '../widget/picture_widget.dart';
+import '../widget/layout_widget.dart';
 
 
 

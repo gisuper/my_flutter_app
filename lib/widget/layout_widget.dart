@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/Post.dart';
+import '../model/post.dart';
 
 class LayoutWidget extends StatelessWidget {
   @override
