@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../model/Post.dart';
 import '../widget/MusicWidget.dart';
 import '../widget/PictureWidget.dart';
+import '../widget/LayoutWidget.dart';
 
 
 
@@ -11,7 +12,8 @@ class MyTabBarView extends StatelessWidget {
     return TabBarView(children: [
       ListView.builder(itemCount: posts.length, itemBuilder: _itemBuilder),
       MusicWidget(),
-      PictureWidget()
+      PictureWidget(),
+      LayoutWidget(),
     ]);
   }
 

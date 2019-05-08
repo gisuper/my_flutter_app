@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             title: buildTitle(),
@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
       Tab(icon: Icon(Icons.movie),),
       Tab(icon: Icon(Icons.music_video),),
       Tab(icon: Icon(Icons.picture_in_picture),),
+      Tab(icon: Icon(Icons.view_comfy),),
     ]);
   }
 }
