@@ -42,7 +42,8 @@ class MyDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pushNamed(Const.PICTRUE_ROUT);
               },
-            ),ListTile(
+            ),
+            ListTile(
               title: Text(
                 "SLIVER",
                 textAlign: TextAlign.right,
@@ -51,6 +52,17 @@ class MyDrawer extends StatelessWidget {
               trailing: Icon(Icons.signal_wifi_4_bar_lock, color: Colors.blue,),
               onTap: () {
                 Navigator.of(context).pushNamed(Const.SLIVER_ROUT);
+              },
+            ),
+            ListTile(
+              title: Text(
+                "TextField",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.TEXTFIELD_ROUT);
               },
             )
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../model/Post.dart';
 
-class RouteSliver extends StatelessWidget {
+class SliverDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
