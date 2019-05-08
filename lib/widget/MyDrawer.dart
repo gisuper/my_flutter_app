@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../model/Const.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -38,7 +39,9 @@ class MyDrawer extends StatelessWidget {
                 style: buildTextStyle(),
               ),
               trailing: Icon(Icons.picture_in_picture, color: Colors.blue,),
-              onTap: () => Navigator.pop(context),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.PICTRUE_ROUT);
+              },
             )
           ],
         ));
