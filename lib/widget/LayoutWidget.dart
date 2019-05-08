@@ -62,6 +62,15 @@ class LayoutWidget extends StatelessWidget {
         bottom: 90.0,
         right: 10.0,
       ),
+      Positioned.fill(child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () => print("index:$index"),
+          splashColor: Colors.yellow.withOpacity(0.5),
+          highlightColor: Colors.red.withOpacity(0.5),
+          
+        ),
+      ))
     ];
   }
 }
