@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'model/Const.dart';
 import 'widget/HomePage.dart';
+import 'widget/RouteSliver.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       routes: {
-        Const.PICTRUE_ROUT : (context) => RoutePicture()
+        Const.PICTRUE_ROUT : (context) => RoutePicture(),
+        Const.SLIVER_ROUT : (context) => RouteSliver(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
