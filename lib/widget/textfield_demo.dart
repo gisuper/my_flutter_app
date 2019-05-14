@@ -5,13 +5,81 @@ class TextFieldDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(left: 50.0,right: 50.0),
-        alignment: Alignment(0.0, 0.0),
-        child: new TextFieldWidget(),
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextFormFieldWidget(),
+          ],
+        ),
       ),
     );
   }
 }
+
+
+class TextFormFieldWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return TextFormFieldState();
+  }
+
+}
+
+
+class TextFormFieldState extends State<TextFormFieldWidget> {
+
+  var key = GlobalKey<FormState>();
+
+  String userName;
+
+  String _validator(String value) {
+    if (value.isEmpty) {
+      return "UserName is required";
+    }
+    return null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(
+              hintText: 'please intput UserName',
+              labelText: 'UserName',
+              icon: Icon(Icons.input),
+            ),
+            onSaved: (value) {
+              userName = value;
+            },
+            validator: _validator,
+            autovalidate: true,
+          ),
+          SizedBox(height: 10.0,),
+          TextFormField(
+            decoration: InputDecoration(
+              hintText: 'please intput PassWord',
+              labelText: 'Password',
+              icon: Icon(Icons.work),
+            ),
+            onSaved: (value) {
+              userName = value;
+            },
+            validator: _validator,
+            autovalidate: true,
+          ),
+          SizedBox(height: 120.0,),
+          FloatingActionButton(onPressed: (){
+            Scaffold.of(context).showSnackBar(SnackBar(content: Text('Login Success')));
+          },child: Text("Submit"),)
+        ],
+      ),
+    );
+  }
+}
+
 
 class TextFieldWidget extends StatefulWidget {
   @override

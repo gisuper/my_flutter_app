@@ -64,8 +64,40 @@ class MyDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pushNamed(Const.TEXTFIELD_ROUT);
               },
-            )
-
+            ),
+            ListTile(
+              title: Text(
+                "popupmenu",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.POPUPMENU_ROUT);
+              },
+            ),
+            ListTile(
+              title: Text(
+                "button",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.BUTTON_ROUT);
+              },
+            ),
+            ListTile(
+              title: Text(
+                "DateTime",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.DATEPICKER_ROUT);
+              },
+            ),
           ],
         ));
   }

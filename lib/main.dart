@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'widget/button_demo.dart';
 import 'model/const.dart';
 import 'widget/home_page.dart';
 import 'widget/route_sliver.dart';
 import 'widget/textfield_demo.dart';
+import 'widget/date_picker_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,11 +13,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: Const.DATEPICKER_ROUT ,
       routes: {
         Const.PICTRUE_ROUT : (context) => PictureDemo(),
         Const.SLIVER_ROUT : (context) => SliverDemo(),
         Const.TEXTFIELD_ROUT : (context) => TextFieldDemo(),
+        Const.POPUPMENU_ROUT : (context) => PopupMenuDemo(),
+        Const.BUTTON_ROUT : (context) => ButtonDemo(),
+        Const.DATEPICKER_ROUT : (context) => DatePickerDemo(),
       },
+
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
