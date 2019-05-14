@@ -98,6 +98,17 @@ class MyDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(Const.DATEPICKER_ROUT);
               },
             ),
+            ListTile(
+              title: Text(
+                "Stream",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.STREAM_ROUT);
+              },
+            ),
           ],
         ));
   }

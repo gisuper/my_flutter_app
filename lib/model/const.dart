@@ -5,4 +5,6 @@ class Const{
   static  final String POPUPMENU_ROUT = "/popupmenu";
   static  final String BUTTON_ROUT = "/button";
   static  final String DATEPICKER_ROUT = "/date_picker";
+
+  static final String STREAM_ROUT = "/stream";
 }
