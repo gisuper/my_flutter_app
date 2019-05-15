@@ -36,6 +36,12 @@ class StreamWidgetState extends State<StreamWidget> {
     awaitAddData();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    _streamController.close();
+  }
+
   void awaitAddData() async {
     await Future.delayed(Duration(seconds: 5));
     _streamController.add("awaitAddData");

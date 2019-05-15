@@ -109,6 +109,17 @@ class MyDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(Const.STREAM_ROUT);
               },
             ),
+            ListTile(
+              title: Text(
+                "Rxdart",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.RXDART_ROUT);
+              },
+            ),
           ],
         ));
   }
