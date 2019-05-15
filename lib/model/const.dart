@@ -8,4 +8,5 @@ class Const{
   static  final String RXDART_ROUT = "/rxdart";
 
   static final String STREAM_ROUT = "/stream";
+  static final String BLOC_ROUT = "/bloc";
 }

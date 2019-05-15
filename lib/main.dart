@@ -7,6 +7,7 @@ import 'widget/textfield_demo.dart';
 import 'widget/date_picker_demo.dart';
 import 'widget/stream_demo.dart';
 import 'widget/rxdart_demo.dart';
+import 'bloc/bloc_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-//      initialRoute: Const.RXDART_ROUT ,
+      initialRoute: Const.BLOC_ROUT ,
       routes: {
         Const.PICTRUE_ROUT : (context) => PictureDemo(),
         Const.SLIVER_ROUT : (context) => SliverDemo(),
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         Const.DATEPICKER_ROUT : (context) => DatePickerDemo(),
         Const.STREAM_ROUT : (context) => StreamDemo(),
         Const.RXDART_ROUT : (context) => RxdartDemo(),
+        Const.BLOC_ROUT : (context) => BlocDemo(),
       },
 
       theme: ThemeData(
