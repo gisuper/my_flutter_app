@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'widget/dio_demo.dart';
 import 'widget/button_demo.dart';
 import 'model/const.dart';
 import 'widget/home_page.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: Const.BLOC_ROUT ,
+      initialRoute: Const.DIO_ROUT ,
       routes: {
         Const.PICTRUE_ROUT : (context) => PictureDemo(),
         Const.SLIVER_ROUT : (context) => SliverDemo(),
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         Const.RXDART_ROUT : (context) => RxdartDemo(),
         Const.BLOC_ROUT : (context) => BlocDemo(),
         Const.PLUGIN_ROUT : (context) => FlutterInvokeJava(),
+        Const.DIO_ROUT : (context) => DioDemo(),
       },
 
       theme: ThemeData(
