@@ -17,23 +17,6 @@ class DioDemo extends StatelessWidget{
 
 }
 
-getResponse() async{
-  print("123");
-  Dio dio = new Dio();
-  dio.options.baseUrl="https://t-api.xyhj.io/v1/m/en/";
-  dio.options.headers = {"AHost":"gameCenter"};
-  dio.options.connectTimeout=5000;
-  dio.options.receiveTimeout=5000;
-
-  Response future = await dio.get("app/list",queryParameters: {"system":"android","andrCurVersion":"1.2.3"});
-  GameList gameList = GameList.fromJson(future.data);
-  bool success = gameList.success;
-  print("success : $success");
-  print("size:${gameList.payload.length}");
-  for(Payload item in gameList.payload){
-    print("gameName:${item.gameName}");
-  }
-}
 
 class DioWidget extends StatefulWidget{
   @override
@@ -44,6 +27,8 @@ class DioWidget extends StatefulWidget{
 
 class DioState extends State<DioWidget>{
 
+  String title = "tite";
+
   @override
   void initState() {
     super.initState();
@@ -52,7 +37,27 @@ class DioState extends State<DioWidget>{
   }
   @override
   Widget build(BuildContext context) {
-    return Text("1DioDemo1");
+    return Text("$title");
+  }
+  getResponse() async{
+    print("123");
+    Dio dio = new Dio();
+    dio.options.baseUrl="https://t-api.xyhj.io/v1/m/en/";
+    dio.options.headers = {"AHost":"gameCenter"};
+    dio.options.connectTimeout=5000;
+    dio.options.receiveTimeout=5000;
+
+    Response future = await dio.get("app/list",queryParameters: {"system":"android","andrCurVersion":"1.2.3"});
+    GameList gameList = GameList.fromJson(future.data);
+    bool success = gameList.success;
+    print("success : $success");
+    print("size:${gameList.payload.length}");
+    for(Payload item in gameList.payload){
+      print("gameName:${item.gameName}");
+    }
+    setState(() {
+      title = future.data.toString();
+    });
   }
 
 }
