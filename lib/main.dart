@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         Const.STREAM_ROUT : (context) => StreamDemo(),
         Const.RXDART_ROUT : (context) => RxdartDemo(),
         Const.BLOC_ROUT : (context) => BlocDemo(),
-        "/plugin" : (context) => FlutterInvokeJava(),
+        Const.PLUGIN_ROUT : (context) => FlutterInvokeJava(),
       },
 
       theme: ThemeData(

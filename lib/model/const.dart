@@ -9,4 +9,5 @@ class Const{
 
   static final String STREAM_ROUT = "/stream";
   static final String BLOC_ROUT = "/bloc";
+  static final String PLUGIN_ROUT = "/plugin";
 }

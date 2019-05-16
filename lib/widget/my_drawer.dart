@@ -131,6 +131,17 @@ class MyDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(Const.BLOC_ROUT);
               },
             ),
+            ListTile(
+              title: Text(
+                "Plugin",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.PLUGIN_ROUT);
+              },
+            ),
           ],
         ));
   }
