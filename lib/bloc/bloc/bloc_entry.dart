@@ -1,8 +1,7 @@
 import 'dart:async';
+import 'bloc_provider.dart';
 
-import 'package:flutter/material.dart';
-
-class CountBloc {
+class CountBloc implements BlocBase {
   int _sumCount = 0;
 
   final StreamController<int> _streamController = StreamController<int>();
@@ -21,26 +20,17 @@ class CountBloc {
     _sumController.add(_sumCount);
     print("_sumCount:$_sumCount");
   }
-  void dispose(){
+
+  @override
+  void dispose() {
+    print("dispose");
     _streamController.close();
     _sumController.close();
   }
-}
-
-class BlocProvider extends InheritedWidget {
-
-  final CountBloc countBloc;
-  final Widget widget;
-
-  BlocProvider({this.widget, this.countBloc}) :super(child: widget);
-
-  static BlocProvider of(BuildContext context) {
-    return context.inheritFromWidgetOfExactType(BlocProvider);
-  }
 
   @override
-  bool updateShouldNotify(InheritedWidget oldWidget) {
-    return true;
+  void init() {
+    print("init");
   }
 
 }
