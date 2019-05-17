@@ -34,7 +34,7 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                "PICTURE",
+                "Provider",
                 textAlign: TextAlign.right,
                 style: buildTextStyle(),
               ),

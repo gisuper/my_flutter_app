@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'bloc/bloc_demo.dart';
+import 'provider/bloc_list.dart';
+import 'provider/provider_widget.dart';
+import 'widget/flutter_invoke_java.dart';
 import 'widget/dio_demo.dart';
 import 'widget/button_demo.dart';
 import 'model/const.dart';
@@ -9,16 +12,28 @@ import 'widget/textfield_demo.dart';
 import 'widget/date_picker_demo.dart';
 import 'widget/stream_demo.dart';
 import 'widget/rxdart_demo.dart';
-import 'bloc/bloc_demo.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return Provider<Bloc>(
+      builder: (_) => Bloc(),
+      dispose: (_, value) => value.dispose(),
+      child: RootAppWidget(),
+    );
+  }
+}
+
+
+class RootAppWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: Const.DIO_ROUT ,
+      initialRoute: Const.PICTRUE_ROUT ,
       routes: {
         Const.PICTRUE_ROUT : (context) => PictureDemo(),
         Const.SLIVER_ROUT : (context) => SliverDemo(),
@@ -41,66 +56,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class FlutterInvokeJava extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    return _PluginTestState();
-  }
-}
-class _PluginTestState extends State<FlutterInvokeJava> {
 
-  //创建通道名称 必须唯一
-  static const platform = const MethodChannel('sample.flutter.io/data');
-  String _data;
-
-  Future<Null> _returndata() async{
-    String data;
-    try{
-      //1.invokeMethod('xxxx') xxx可以自己命名
-      final int resultData = await platform.invokeMethod('data');
-      data = "平台返回数值：$resultData";
-    }catch(e){
-      data = "错误：${e.message}";
-    }
-
-    //状态更新
-    setState(() {
-      _data = data;
-    });
-
-  }
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      //appBar
-      appBar: AppBar(
-        title: Text("插件例子"),
-        //标题居中
-        centerTitle: true,
-      ),
-      body:new Center(
-        child: Text("$_data"),
-      ),
-      floatingActionButton : FloatingActionButton(
-          onPressed: _returndata,
-          tooltip: "获取平台返回的值",
-          child: new Icon(Icons.audiotrack)
-      ),
-
-    );
-  }
-
-}
-
-
-
-class PictureDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("AppBarTitle"),
-      ),
-    );
-  }
-}
