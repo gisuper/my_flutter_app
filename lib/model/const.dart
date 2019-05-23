@@ -11,4 +11,5 @@ class Const{
   static final String BLOC_ROUT = "/bloc";
   static final String PLUGIN_ROUT = "/plugin";
   static final String DIO_ROUT = "/dio";
+  static final String FLURO_ROUT = "/fluro";
 }

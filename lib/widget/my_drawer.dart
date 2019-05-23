@@ -153,6 +153,17 @@ class MyDrawer extends StatelessWidget {
                 Navigator.of(context).pushNamed(Const.DIO_ROUT);
               },
             ),
+            ListTile(
+              title: Text(
+                "Fluro",
+                textAlign: TextAlign.right,
+                style: buildTextStyle(),
+              ),
+              trailing: Icon(Icons.textsms, color: Colors.blue,),
+              onTap: () {
+                Navigator.of(context).pushNamed(Const.FLURO_ROUT);
+              },
+            ),
           ],
         ));
   }

@@ -12,6 +12,7 @@ import 'widget/textfield_demo.dart';
 import 'widget/date_picker_demo.dart';
 import 'widget/stream_demo.dart';
 import 'widget/rxdart_demo.dart';
+import 'widget/fluro_demo.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
@@ -33,7 +34,7 @@ class RootAppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: Const.PICTRUE_ROUT ,
+      initialRoute: Const.FLURO_ROUT ,
       routes: {
         Const.PICTRUE_ROUT : (context) => PictureDemo(),
         Const.SLIVER_ROUT : (context) => SliverDemo(),
@@ -46,6 +47,7 @@ class RootAppWidget extends StatelessWidget {
         Const.BLOC_ROUT : (context) => BlocDemo(),
         Const.PLUGIN_ROUT : (context) => FlutterInvokeJava(),
         Const.DIO_ROUT : (context) => DioDemo(),
+        Const.FLURO_ROUT : (context) => FluroDemo(),
       },
 
       theme: ThemeData(
